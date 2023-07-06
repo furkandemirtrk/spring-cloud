@@ -1,0 +1,41 @@
+server:
+  port: 8081
+
+spring:
+  main:
+    web-application-type: reactive
+    allow-bean-definition-overriding: true
+  application:
+    name: springcloudgateway
+  profiles:
+    active: test
+  cloud:
+    gateway:
+      routes:
+        - id: firstService
+          uri: http://localhost:8082
+          predicates:
+            - Path=/first-service/api/**
+        - id: secondService
+          uri: http://localhost:8083
+          predicates:
+            - Path=/second-service/api/**
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    operationsSorter: method
+  show-actuator: true
+
+management:
+  endpoint:
+    gateway:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: ["metrics", "prometheus", "health", "info", "threaddump", "gateway"]
+
+logging:
+  pattern:
+    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
