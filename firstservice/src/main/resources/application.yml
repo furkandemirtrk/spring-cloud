@@ -3,8 +3,26 @@ server:
 spring:
   application:
     name: firstservice
+  boot:
+    admin:
+      client:
+        url: http://localhost:8084
 
 springdoc:
   swagger-ui:
     path: /swagger-ui.html
   show-actuator: true
+
+management:
+  endpoint:
+    health:
+      show-details: always
+    gateway:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  info:
+    env:
+      enabled: true

@@ -21,6 +21,7 @@ repositories {
 
 ext {
 	set('springCloudVersion', "2021.0.7")
+	set('springBootAdminVersion', "2.7.4")
 }
 
 dependencies {
@@ -30,7 +31,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-aop'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-
+	implementation "de.codecentric:spring-boot-admin-starter-client:${springBootAdminVersion}"
 	implementation 'io.micrometer:micrometer-registry-prometheus:1.10.2'
 
 	implementation 'org.springdoc:springdoc-openapi-ui:1.6.7'

@@ -9,6 +9,10 @@ spring:
     name: springcloudgateway
   profiles:
     active: test
+  boot:
+    admin:
+      client:
+        url: http://localhost:8084
   cloud:
     gateway:
       routes:
@@ -29,12 +33,17 @@ springdoc:
 
 management:
   endpoint:
+    health:
+      show-details: always
     gateway:
       enabled: true
   endpoints:
     web:
       exposure:
-        include: ["metrics", "prometheus", "health", "info", "threaddump", "gateway"]
+        include: '*'
+  info:
+    env:
+      enabled: true
 
 logging:
   pattern:
