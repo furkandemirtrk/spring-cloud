@@ -27,6 +27,12 @@ spring:
           predicates:
             - Path=/second-service/api/**
 
+  sleuth:
+    opentracing:
+      enabled: true
+    reactor:
+      instrumentation-type: MANUAL
+
 springdoc:
   swagger-ui:
     path: /swagger-ui.html
@@ -50,3 +56,8 @@ management:
 logging:
   pattern:
     level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
+
+apigateway:
+  filters:
+    loggers:
+      enabled: true
