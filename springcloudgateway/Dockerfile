@@ -5,7 +5,7 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 # Copy JAR file and its dependencies
-COPY build/libs/springcloudgateway-0.0.1-SNAPSHOT-plain.jar /app
+COPY build/libs/springcloudgateway-0.0.1-SNAPSHOT.jar /app
 
 # Set entrypoint
-ENTRYPOINT ["java", "-jar", "/app/springcloudgateway-0.0.1-SNAPSHOT-plain.jar"]
+ENTRYPOINT ["java", "-jar", "/app/springcloudgateway-0.0.1-SNAPSHOT.jar"]

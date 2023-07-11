@@ -53,18 +53,6 @@ tasks.named('test') {
 	useJUnitPlatform()
 }
 
-bootJar {
+jar {
 	enabled = false
-}
-
-jar {
-	enabled = true
-}
-
-jar {
-	manifest {
-		attributes(
-				'Main-Class': 'src.main.java.com.demirturk.springcloudgateway.SpringcloudgatewayApplication'
-		)
-	}
 }

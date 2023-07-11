@@ -14,16 +14,16 @@ spring:
       client:
         username: client
         password: client
-        url: http://localhost:8084
+        url: http://adminservice:8084
   cloud:
     gateway:
       routes:
         - id: firstService
-          uri: http://localhost:8082
+          uri: http://firstservice:8082
           predicates:
             - Path=/first-service/api/**
         - id: secondService
-          uri: http://localhost:8083
+          uri: http://secondservice:8083
           predicates:
             - Path=/second-service/api/**
 
