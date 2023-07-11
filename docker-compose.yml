@@ -3,7 +3,7 @@ services:
 
   firstservice-server:
     container_name: firstservice
-    image: furkandemirturk/firstservice:1.0
+    image: furkandemirturk/firstservice
     ports:
       - "8082:8082"
     networks:
@@ -11,7 +11,7 @@ services:
   
   adminservice-server:
     container_name: adminservice
-    image: furkandemirturk/adminservice:1.0
+    image: furkandemirturk/adminservice
     ports:
       - "8084:8084"
     networks:
@@ -19,7 +19,7 @@ services:
 
   springcloudgateway-server:
     container_name: springcloudgateway
-    image: furkandemirturk/springcloudgateway:1.0
+    image: furkandemirturk/springcloudgateway
     ports:
       - "8081:8081"
     networks:
